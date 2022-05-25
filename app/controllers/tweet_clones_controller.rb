@@ -3,7 +3,8 @@ class TweetClonesController < ApplicationController
 
   # GET /tweet_clones or /tweet_clones.json
   def index
-    @tweet_clones = TweetClone.all
+    @tweet_clones = TweetClone.all.order('created_at DESC')
+    @tweet_clone = TweetClone.new
   end
 
   # GET /tweet_clones/1 or /tweet_clones/1.json
