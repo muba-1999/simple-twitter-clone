@@ -3,8 +3,8 @@
 <%= render @tweet_clone %>
 
 <div>
-  <%= link_to "Edit this tweet clone", edit_tweet_clone_path(@tweet_clone) %> |
-  <%= link_to "Back to tweet clones", tweet_clones_path %>
+  <%= link_to "Edit", edit_tweet_clone_path(@tweet_clone) %> |
+  <%= link_to "Back", tweet_clones_path %>
 
-  <%= button_to "Destroy this tweet clone", @tweet_clone, method: :delete %>
+  <%= button_to "Destroy", @tweet_clone, method: :delete %>
 </div>
