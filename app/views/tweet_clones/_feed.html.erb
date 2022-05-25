@@ -1,14 +1,14 @@
 <div class="column is-half">
-        <article class="media box">
-        <figure class="media-left">
-            <p class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/64x64.png">
-            </p>
-        </figure>
-        <div class="media-content">
-            <%= render 'tweet_clones/form' %>
-        </div>
-        </article>
+    <article class="media box">
+    <figure class="media-left">
+        <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/64x64.png">
+        </p>
+    </figure>
+    <div class="media-content">
+        <%= render 'tweet_clones/form' %>
+    </div>
+    </article>
 
     <% @tweet_clones.each do | tweet_clone | %>
 
@@ -23,7 +23,7 @@
                 <div class="media-content">
                     <div class="content">
                         <strong>Mubanga Mukoba</strong><br/>
-                        <small>@mukobam4</small>
+                        <small>@mukobam4</small><br/>
                         <p><%= tweet_clone.tweet_clone %></p>
                     </div>
 

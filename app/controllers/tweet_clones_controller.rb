@@ -26,7 +26,7 @@ class TweetClonesController < ApplicationController
 
     respond_to do |format|
       if @tweet_clone.save
-        format.html { redirect_to tweet_clone_url(@tweet_clone), notice: "Tweet clone was successfully created." }
+        format.html { redirect_to root_path, notice: "Tweet clone was successfully created." }
         format.json { render :show, status: :created, location: @tweet_clone }
       else
         format.html { render :new, status: :unprocessable_entity }
