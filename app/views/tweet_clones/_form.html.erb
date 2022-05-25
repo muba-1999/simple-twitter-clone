@@ -1,22 +1,10 @@
-<%= form_with(model: tweet_clone) do |form| %>
-  <% if tweet_clone.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(tweet_clone.errors.count, "error") %> prohibited this tweet_clone from being saved:</h2>
-
-      <ul>
-        <% tweet_clone.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= simple_form_for(@tweet_clone) do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+    <div class="control">
+      <%= f.input :tweet_clone, label: "Tweet_clone about it", input_html: {class: "textarea"}, wrapper: false, label_html: {class: "label"}, placeholder: "compose a new tweet_clone...." %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :tweet_clone, style: "display: block" %>
-    <%= form.text_area :tweet_clone %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= f.button :submit, class: "button is-info" %>
 <% end %>
