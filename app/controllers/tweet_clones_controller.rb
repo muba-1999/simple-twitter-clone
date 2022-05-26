@@ -1,5 +1,6 @@
 class TweetClonesController < ApplicationController
   before_action :set_tweet_clone, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /tweet_clones or /tweet_clones.json
   def index
@@ -13,7 +14,7 @@ class TweetClonesController < ApplicationController
 
   # GET /tweet_clones/new
   def new
-    @tweet_clone = TweetClone.new
+    @tweet_clone = current_user.tweet_clones.build
   end
 
   # GET /tweet_clones/1/edit
@@ -22,7 +23,7 @@ class TweetClonesController < ApplicationController
 
   # POST /tweet_clones or /tweet_clones.json
   def create
-    @tweet_clone = TweetClone.new(tweet_clone_params)
+    @tweet_clone = current_user.tweet_clones.build(tweet_clone_params)
 
     respond_to do |format|
       if @tweet_clone.save
